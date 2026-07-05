@@ -1,0 +1,528 @@
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffa500;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ffa500;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff8c00;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-icpc {
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.about-icpc h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-icpc p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Schedule / Timeline section */
+.schedule {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.schedule h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #667eea;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    width: 16px;
+    height: 16px;
+    background: #ffa500;
+    border: 3px solid #667eea;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -10px;
+}
+
+/* Registration section */
+.registration {
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.registration h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.registration form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.2);
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #5a67d8;
+}
+
+/* Contact section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f4f4f4;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #ffa500;
+}
+
+.copyright {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Responsive design – tablet and below */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .about-icpc {
+        padding: 3rem 1rem;
+    }
+
+    .about-icpc h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-icpc p {
+        font-size: 1rem;
+    }
+
+    .schedule {
+        padding: 3rem 1rem;
+    }
+
+    .schedule h2 {
+        font-size: 1.75rem;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding: 1rem 1rem 1rem 3rem;
+        text-align: left !important;
+        left: 0 !important;
+    }
+
+    .timeline-item::before {
+        left: 12px !important;
+        right: auto !important;
+    }
+
+    .registration {
+        padding: 3rem 1rem;
+    }
+
+    .registration form {
+        max-width: 100%;
+    }
+
+    .contact {
+        padding: 3rem 1rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Responsive design – mobile phones */
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    nav ul {
+        gap: 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .about-icpc {
+        padding: 2rem 1rem;
+    }
+
+    .about-icpc h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-icpc p {
+        font-size: 0.95rem;
+    }
+
+    .schedule {
+        padding: 2rem 1rem;
+    }
+
+    .schedule h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-item {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    }
+
+    .timeline-content {
+        padding: 0.75rem;
+    }
+
+    .registration {
+        padding: 2rem 1rem;
+    }
+
+    .registration h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 0.75rem 1rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}

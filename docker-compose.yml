@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./backend
+    container_name: sandbox_swift-vale-enqo_backend
+    restart: always
+    environment:
+      - DEBUG=False
+      - ALLOWED_HOSTS=swift-vale-enqo.sandbox.architeq.tech
+    networks:
+      - architeq_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.swift-vale-enqo-api.rule=Host(`swift-vale-enqo.sandbox.architeq.tech`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.swift-vale-enqo-api.entrypoints=websecure"
+      - "traefik.http.routers.swift-vale-enqo-api.tls.certresolver=myresolver"
+      - "traefik.http.services.swift-vale-enqo-api.loadbalancer.server.port=8000"
+
+  frontend:
+    build: ./frontend
+    container_name: sandbox_swift-vale-enqo_frontend
+    restart: always
+    environment:
+      - NEXT_PUBLIC_API_URL=https://swift-vale-enqo.sandbox.architeq.tech
+    networks:
+      - architeq_network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.swift-vale-enqo.rule=Host(`swift-vale-enqo.sandbox.architeq.tech`)"
+      - "traefik.http.routers.swift-vale-enqo.entrypoints=websecure"
+      - "traefik.http.routers.swift-vale-enqo.tls.certresolver=myresolver"
+      - "traefik.http.services.swift-vale-enqo.loadbalancer.server.port=3000"
+
+networks:
+  architeq_network:
+    external: true
